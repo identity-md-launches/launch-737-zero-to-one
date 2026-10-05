@@ -1,0 +1,20 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "ZeroToOne",
+    "name": "Zero To One",
+    "symbol": "ZTO",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "125270724187523965593206900"
+  },
+  "economics": {"poolBps":8800,"initialMarketCapWei":"2500000000000000000000","remainderTo":"0x7b8c742f2e1eeb3fb2c10d72967fa6d4a22f0479"},
+  "notes": "ZeroToOne in src/ZeroToOne.sol is a plain ERC-20 community token. Its argument-free constructor mints all 1,000,000,000 ZTO with 18 decimals to msg.sender, the launch factory. Supply is fixed: there are no subsequent mint or burn functions, fees, owner powers, pause, blocklist, or upgrade functions. Transfers deliver the exact requested amount; transferFrom requires allowance. Transfers to the zero address and approvals of the zero address revert. No application contracts or initialization calls are required. The pool pairs ZTO with the specified IMD token at a 0.3% fee and tick spacing 60. initialPrice is provenance only: floor(sqrt(2500000000000000000000 / 1000000000000000000000000000) * 2^96), using ZTO as currency0 and IMD as currency1. The deployer derives the actual opening sqrtPriceX96 from economics.initialMarketCapWei and token.totalSupply using the deployed currencies' address order."
+}
